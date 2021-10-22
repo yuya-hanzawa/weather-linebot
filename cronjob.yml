@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello-world
+spec: 
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello-world
+            image: python:3.7-alpine
+            command: ["python"]
+            args: ["$HOME/twitter-bot-with-kubernetes/hello-world.py"]
+          restartPolicy: OnFailure
