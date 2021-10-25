@@ -10,7 +10,8 @@ spec:
         spec:
           containers:
           - name: hello-world
-            image: python:3.7-alpine
-            command: ["python"]
-            args: ["$HOME/twitter-bot-with-kubernetes/hello-world.py"]
+            image: hello-world
+            imagePullPolicy: IfNotPresent
+            command: ["python3"]
+            args: ["hello-world.py"]
           restartPolicy: OnFailure
