@@ -5,9 +5,9 @@ metadata:
 spec: 
   schedule: "*/5 * * * *"
   failedJobsHistoryLimit: 6
-  backoffLimit: 3
   jobTemplate:
     spec:
+      backoffLimit: 3
       template:
         spec:
           containers:
