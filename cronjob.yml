@@ -4,6 +4,8 @@ metadata:
   name: hello-world
 spec: 
   schedule: "*/5 * * * *"
+  failedJobsHistoryLimit: 6
+  backoffLimit: 3
   jobTemplate:
     spec:
       template:
