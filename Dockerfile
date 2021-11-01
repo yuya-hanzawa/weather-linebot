@@ -1,9 +1,8 @@
-FROM python:3.8-alpine
+FROM python:3
 
 COPY /app /app
 
 WORKDIR /app 
 
-RUN chmod +x hello-world.py
-
-ENTRYPOINT [“python”, “hello-world.py”]
+RUN pip install -r requirements.txt
+RUN chmod +x weather.py

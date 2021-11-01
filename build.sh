@@ -1,1 +1,1 @@
-docker build -t hello-world:latest .
+docker build -t weather-bot:latest .
