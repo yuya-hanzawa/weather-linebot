@@ -68,10 +68,10 @@ failedJobsHistoryLimit: 失敗したJobをPod内に保存する数 (３)
 
 ## Weather API
 ### API
-https://api.rakuten.net/weatherbit/api/weather/endpoints
+https://api.rakuten.net/weatherbit/api/weather?endpoint=apiendpoint_5067b308-eb68-4d2d-b0ae-e135dbd646d8
 
 ### Documents
-https://www.weatherbit.io/api/weather-forecast-5-day
+https://www.weatherbit.io/api/weather-forecast-120-hour
 
 ## Line API
 ### Documents
