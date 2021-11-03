@@ -15,7 +15,7 @@ reply_token = os.environ["REPLY_TOKEN"]
 def Create_messages(lat, lon, sign_up_token):
     url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/hourly"
 
-    params = {"lat":"35.6", "lon":"139.61", "lang":"ja", "hours":"15"}
+    params = {"lat":lat, "lon":lon, "lang":"ja", "hours":"15"}
 
 
     headers = {
