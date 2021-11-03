@@ -5,13 +5,15 @@ from linebot import LineBotApi
 from linebot.models import TextSendMessage
 from linebot.exceptions import LineBotApiError
 
+
 lat = os.environ["LAT"]
 lon = os.environ["LON"]
 sign_up_token = os.environ["SIGN_UP_TOKEN"]
 channel_access_token = os.environ["CHANNEL_ACCESS_TOKEN"]
-reply_token = os.environ["reply_token"]
+reply_token = os.environ["REPLY_TOKEN"]
 
-def Authorize_weather_api(lat, lon, sign_up_token):
+
+def Create_messages(lat, lon, sign_up_token):
     url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly"
 
     params = {"lat":lat, "lon":lon, "lang":"ja"}
@@ -26,8 +28,6 @@ def Authorize_weather_api(lat, lon, sign_up_token):
     
     except ApiError as e:
         raise(e)
-
-def Create_messages():
 
     cnt = 0
     message = ''
@@ -64,8 +64,7 @@ def Send_messages(channel_access_token, reply_token, message):
         raise(e)
 
 def main():
-    Authorize_weather_api(lat, lon, sign_up_token)
-    messages = Create_messages()
+    message = Create_messages(lat, lon, sign_up_token)
     Send_messages(channel_access_token, reply_token, message)
 
 

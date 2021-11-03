@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: weather-config
+data:
+  LAT: < Latitude　>
+  LON: < Longitude >
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: weather-secret
+type: Opaque
+data:
+  SIGN_UP_TOKEN: < sign_up_token >
+  CHANNEL_ACCESS_TOKEN: < channel_access_token >
+  REPLY_TOKEN: < reply-token >

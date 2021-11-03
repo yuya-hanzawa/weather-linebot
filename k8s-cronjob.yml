@@ -16,4 +16,10 @@ spec:
             imagePullPolicy: IfNotPresent
             command: ["python3"]
             args: ["weather.py"]
+            envFrom:
+            - configMapRef:
+                name: weather-config
+            - secretRef:
+                name: weather-secret
           restartPolicy: OnFailure
+     
