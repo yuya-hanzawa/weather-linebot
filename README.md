@@ -42,9 +42,9 @@ kubectl create job manually --from=cronjob/weather-bot
 ## JobとCronJob特有のパラメーター
 
 ```
-- completions: 実行成功回数、設定した回数Jobが正常終了するまで続く(途中で変更不可) (parallelismと同じ数)
-- parallelism: 並列数、設定した数のJobを並列に同時実行する (1)
-- baskoffLimit: 実行失敗を許容する回数 (6)
+completions: 実行成功回数、設定した回数Jobが正常終了するまで続く(途中で変更不可) (parallelismと同じ数)
+parallelism: 並列数、設定した数のJobを並列に同時実行する (1)
+baskoffLimit: 実行失敗を許容する回数 (6)
 
 restartPolicy: 異常終了した時にどのように再起動するかを決めるパラメーター(必須)
 - OnFailure: 再度同一のPodを利用してJobを再開する
