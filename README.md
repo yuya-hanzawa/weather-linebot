@@ -36,30 +36,34 @@ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 kubectl create job manually --from=cronjob/weather-bot
 ```
 
-# パラメーターの引数
+# パラメーターと引数
+カッコ内はデフォルトのパラメーター
 
 ## JobとCronJob特有のパラメーター
 
 ```
-- completions: 実行成功回数、設定した回数Jobが正常終了するまで続く(途中で変更不可)
-- parallelism: 並列数、設定した数のJobを並列に同時実行する
-- baskoffLimit: 実行失敗を許容する回数
+- completions: 実行成功回数、設定した回数Jobが正常終了するまで続く(途中で変更不可) (parallelismと同じ数)
+- parallelism: 並列数、設定した数のJobを並列に同時実行する (1)
+- baskoffLimit: 実行失敗を許容する回数 (6)
 
-restartPolicy: 異常終了した時にどのように再起動するかを決めるパラメーター
+restartPolicy: 異常終了した時にどのように再起動するかを決めるパラメーター(必須)
 - OnFailure: 再度同一のPodを利用してJobを再開する
 - Never: 新規Podが作成される
+
+PodとJobでそれぞれ別のrestartPolicyが存在する
+同じ引数でも挙動が異なるので確認必須
 ``` 
 
 ## CronJob特有のパラメーター
 
 ```
-ConcurrencyPolicy: 同時実行に関するパラメータ 
-- Allow: 同時実行を許容する
+concurrencyPolicy: 同時実行に関するパラメータ 
+- Allow: 同時実行を許容する (デフォルト)
 - Forbid: 実行中のJobがあった場合、新規Jobをスキップする
 - Replace: 実行中のJobを停止し、新規Jobに置き換える
 
-successfulJobsHistoryLimit: 成功したJobをPod内に保存する数
-failedJobsHistoryLimit: 失敗したJobをPod内に保存する数
+successfulJobsHistoryLimit: 成功したJobをPod内に保存する数 (３)
+failedJobsHistoryLimit: 失敗したJobをPod内に保存する数 (３)
 ```
 
 ## Weather API

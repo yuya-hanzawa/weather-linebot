@@ -5,7 +5,6 @@ from linebot import LineBotApi
 from linebot.models import TextSendMessage
 from linebot.exceptions import LineBotApiError
 
-
 lat = os.environ["LAT"]
 lon = os.environ["LON"]
 sign_up_token = os.environ["SIGN_UP_TOKEN"]
@@ -14,9 +13,10 @@ reply_token = os.environ["REPLY_TOKEN"]
 
 
 def Create_messages(lat, lon, sign_up_token):
-    url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly"
+    url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/hourly"
 
-    params = {"lat":lat, "lon":lon, "lang":"ja"}
+    params = {"lat":"35.6", "lon":"139.61", "lang":"ja", "hours":"15"}
+
 
     headers = {
         'x-rapidapi-key': sign_up_token,
@@ -26,31 +26,33 @@ def Create_messages(lat, lon, sign_up_token):
     try:
         response = requests.request("GET", url, headers=headers, params=params)
     
-    except ApiError as e:
+    except Exception as e:
         raise(e)
 
     cnt = 0
     message = ''
     
     for data in response.json()["data"]:
-        text = data["timestamp_local"][11:16] + "時点の降水確率は" + str(data["pop"]) + "%です。"
+        if int(data["timestamp_local"][11:13])%3==0:
 
-        if int(data["pop"]) == 0:
-            text += "本日は晴天です。"
-        elif 0 < int(data["pop"]) <= 30:
-            text += "雨が降る可能性は非常に低いです。"
-        elif 30 < int(data["pop"]) <= 60:
-            text += "雨が降るかもしれません。折り畳み傘を持ち歩きましょう。"
-        else:
-            text += "高い確率で雨が降ります。傘を持ち歩きましょう。"
+            text = data["timestamp_local"][11:16] + "時の降水確率は" + str(data["pop"]) + "%です。"
 
-        cnt += 1
-        message += text
+            if int(data["pop"]) == 0:
+                text += "晴天です。"
+            elif 0 < int(data["pop"]) <= 30:
+                text += "雨が降る可能性は非常に低いです。"
+            elif 30 < int(data["pop"]) <= 60:
+                text += "雨が降るかもしれません。念のため折り畳み傘を持ち歩きましょう。"
+            else:
+                text += "雨が降りそうです。傘を持ち歩きましょう。"
 
-        if cnt == 5:
-            break
+            cnt += 1
+            message += text
 
-        message += "\n\n"
+            if cnt == 5:
+                break
+
+            message += "\n\n"
 
     return message
     

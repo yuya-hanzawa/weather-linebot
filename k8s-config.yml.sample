@@ -12,6 +12,7 @@ metadata:
   name: weather-secret
 type: Opaque
 data:
+  # echo -n < secret token > | base64　でトークンをbase64にエンコード
   SIGN_UP_TOKEN: < sign_up_token >
   CHANNEL_ACCESS_TOKEN: < channel_access_token >
   REPLY_TOKEN: < reply-token >
