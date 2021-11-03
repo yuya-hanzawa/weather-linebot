@@ -4,6 +4,7 @@ metadata:
   name: weather-bot
 spec: 
   schedule: "0 9,12,15 * * *"
+  successfulJobsHistoryLimit: 2
   failedJobsHistoryLimit: 6
   jobTemplate:
     spec:
@@ -21,5 +22,5 @@ spec:
                 name: weather-config
             - secretRef:
                 name: weather-secret
-          restartPolicy: OnFailure
+          restartPolicy: Never
      
