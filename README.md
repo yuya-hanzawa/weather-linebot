@@ -21,17 +21,17 @@ bash build.sh
 
 # オプションコマンド
 
-## cronjobの停止
+## CronJobの停止
 ```
 kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": true } }'
 ```
 
-## cronjobの再起動
+## CronJobの再起動
 ```
 kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 ```
 
-## 手動でcronjobを起動
+## 手動でCronJobを起動
 ```
 kubectl create job manually --from=cronjob/weather-bot
 ```
