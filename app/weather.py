@@ -35,19 +35,9 @@ def Create_messages(lat, lon, sign_up_token):
     for data in response.json()["data"]:
         if int(data["timestamp_local"][11:13])%3==0:
 
-            text = data["timestamp_local"][11:16] + "時の降水確率は" + str(data["pop"]) + "%です。"
-
-            if int(data["pop"]) == 0:
-                text += "晴天です。"
-            elif 0 < int(data["pop"]) <= 30:
-                text += "雨が降る可能性は非常に低いです。"
-            elif 30 < int(data["pop"]) <= 60:
-                text += "雨が降るかもしれません。念のため折り畳み傘を持ち歩きましょう。"
-            else:
-                text += "雨が降りそうです。傘を持ち歩きましょう。"
+            message += data["timestamp_local"][11:16] + "時の降水確率は" + str(data["pop"]) + "%です"
 
             cnt += 1
-            message += text
 
             if cnt == 5:
                 break
