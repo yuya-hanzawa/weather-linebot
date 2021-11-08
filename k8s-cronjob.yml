@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: weather-bot
 spec: 
-  schedule: "0 6 * * *"
+  schedule: "0 21 * * *"
   successfulJobsHistoryLimit: 2
   failedJobsHistoryLimit: 6
   jobTemplate:
