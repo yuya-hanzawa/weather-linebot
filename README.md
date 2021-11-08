@@ -39,7 +39,7 @@ kubectl create job manually --from=cronjob/weather-bot
 # パラメーターと引数
 カッコ内はデフォルトのパラメーター
 
-## JobとCronJob特有のパラメーター
+## JobとCronJob専用のパラメーター
 
 ```
 completions: 実行成功回数、設定した回数Jobが正常終了するまで続く(途中で変更不可) (parallelismと同じ数)
@@ -54,7 +54,7 @@ PodとJobでそれぞれ別のrestartPolicyが存在する
 同じ引数でも挙動が異なるので確認必須
 ``` 
 
-## CronJob特有のパラメーター
+## CronJob専用のパラメーター
 
 ```
 concurrencyPolicy: 同時実行に関するパラメータ 
