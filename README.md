@@ -1,4 +1,4 @@
-# weather-bot
+# weather-linebot
 DockerとKubernetesの練習&勉強 \
 OS: macOS Big Sur 11.6
 
@@ -11,7 +11,7 @@ Kubernetes: v1.21.2
 
 ## 1. コードをクローン
 ```
-git clone https://github.com/zawa1120/weather-bot.git
+git clone https://github.com/zawa1120/weather-linebot.git
 ```
 
 ## 2. コンテナをデプロイ
