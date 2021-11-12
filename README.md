@@ -3,7 +3,6 @@ DockerとKubernetesの練習&勉強 \
 OS: macOS Big Sur 11.6
 
 <br />
-<br />
 
 # Botの作成方法
 ```
@@ -24,7 +23,6 @@ bash build.sh
 ```
 
 <br />
-<br />
 
 # オプションコマンド
 
@@ -43,7 +41,6 @@ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 kubectl create job manually --from=cronjob/weather-bot
 ```
 
-<br />
 <br />
 
 # パラメーターと引数
@@ -75,7 +72,6 @@ PodとJobでそれぞれ別のrestartPolicyが存在する
 | successfulJobsHistoryLimit| - | 成功したJobをPod内に保存する数 | 3 |
 | failedJobsHistoryLimit | - | 失敗したJobをPod内に保存する数 | 3 |
 
-<br />
 <br />
 
 # 参照
