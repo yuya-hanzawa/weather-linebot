@@ -18,12 +18,12 @@ Kubernetes: v1.21.2
 
 ## 1. コードをクローン
 ```
-git clone https://github.com/zawa1120/weather-linebot.git
+$ git clone https://github.com/zawa1120/weather-linebot.git
 ```
 
 ## 2. コンテナをデプロイ
 ```
-bash build.sh
+$ bash build.sh
 ```
 
 <br />
@@ -32,17 +32,17 @@ bash build.sh
 
 ## CronJobの停止
 ```
-kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": true } }'
+$ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": true } }'
 ```
 
 ## CronJobの再起動
 ```
-kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
+$ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 ```
 
 ## 手動でCronJobを起動
 ```
-kubectl create job manually --from=cronjob/weather-bot
+$ kubectl create job manually --from=cronjob/weather-bot
 ```
 
 <br />
