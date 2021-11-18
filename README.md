@@ -1,11 +1,13 @@
 # weather-linebot
-DockerとKubernetesの練習&勉強 \
-OS: macOS Big Sur 11.6
+DockerとKubernetesの練習&勉強 
 
 <br />
 
 # Botの作成方法
 ```
+OS: macOS Big Sur 11.6
+チップ: Intel
+
 Version
 docker: 20.10.8
 Kubernetes: v1.21.2
@@ -15,7 +17,6 @@ Kubernetes: v1.21.2
 ```
 git clone https://github.com/zawa1120/weather-linebot.git
 ```
-
 
 ## 2. コンテナをデプロイ
 ```
@@ -55,10 +56,11 @@ kubectl create job manually --from=cronjob/weather-bot
 | L | OnFailure | 再度同一のPodを利用してJobを再開 | - |
 | L | Never | 新規Podを作成 | - |
 
-```
-PodとJobでそれぞれ別のrestartPolicyが存在する
-同じ引数でも挙動が異なるので確認必須
-```
+<br/>
+
+`PodとJobでそれぞれ別のrestartPolicyが存在する
+同じ引数でも挙動が異なるので確認必須`
+
 <br />
 
 ## CronJob専用のパラメーター
