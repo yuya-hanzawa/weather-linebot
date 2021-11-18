@@ -1,6 +1,8 @@
 # weather-linebot
 DockerとKubernetesの練習&勉強 
 
+LINEのAPIと経度・緯度から天気予報を取得するAPIを使用し、定期的に天気予報を通知するBotを作成する
+
 <br />
 
 # Botの作成方法
