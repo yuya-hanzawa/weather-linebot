@@ -1,20 +1,19 @@
 # weather-linebot
-DockerとKubernetesの練習&勉強 
-
+DockerとKubernetesの練習&勉強  
 LINEのAPIと経度・緯度から天気予報を取得するAPIを使用し、定期的に天気予報を通知するBotを作成する
 
-<br />
+</br>
 
 # Botの作成方法
-使用環境 <br>
-OS: macOS Big Sur 11.6 <br>
+使用環境  
+OS: macOS Big Sur 11.6  
 チップ: Intel
 
-Version <br>
-docker: 20.10.8 <br>
+Version  
+docker: 20.10.8  
 Kubernetes: v1.21.2
 
-<br />
+</br>
 
 ## 1. コードをクローン
 ```
@@ -26,7 +25,7 @@ $ git clone https://github.com/zawa1120/weather-linebot.git
 $ bash build.sh
 ```
 
-<br />
+</br>
 
 # オプションコマンド
 
@@ -45,7 +44,7 @@ $ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 $ kubectl create job manually --from=cronjob/weather-bot
 ```
 
-<br />
+</br>
 
 # パラメーターと引数
 ## JobとCronJob専用のパラメーター
@@ -59,12 +58,12 @@ $ kubectl create job manually --from=cronjob/weather-bot
 | L | OnFailure | 再度同一のPodを利用してJobを再開 | - |
 | L | Never | 新規Podを作成 | - |
 
-<br/>
+</br>
 
 `PodとJobでそれぞれ別のrestartPolicyが存在する
 同じ引数でも挙動が異なるので確認必須`
 
-<br />
+</br>
 
 ## CronJob専用のパラメーター
 
@@ -77,7 +76,7 @@ $ kubectl create job manually --from=cronjob/weather-bot
 | successfulJobsHistoryLimit| - | 成功したJobをPod内に保存する数 | 3 |
 | failedJobsHistoryLimit | - | 失敗したJobをPod内に保存する数 | 3 |
 
-<br />
+</br>
 
 # 参照
 ## Weather API
