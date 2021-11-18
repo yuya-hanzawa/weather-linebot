@@ -2,8 +2,6 @@
 DockerとKubernetesの練習&勉強  
 LINEのAPIと経度・緯度から天気予報を取得するAPIを使用し、定期的に天気予報を通知するBotを作成する
 
-</br>
-
 # Botの作成方法
 使用環境  
 OS: macOS Big Sur 11.6  
@@ -12,8 +10,6 @@ OS: macOS Big Sur 11.6
 Version  
 docker: 20.10.8  
 Kubernetes: v1.21.2
-
-</br>
 
 ## 1. コードをクローン
 ```
@@ -24,8 +20,6 @@ $ git clone https://github.com/zawa1120/weather-linebot.git
 ```
 $ bash build.sh
 ```
-
-</br>
 
 # オプションコマンド
 
@@ -43,8 +37,6 @@ $ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 ```
 $ kubectl create job manually --from=cronjob/weather-bot
 ```
-
-</br>
 
 # パラメーターと引数
 ## JobとCronJob専用のパラメーター
