@@ -6,14 +6,15 @@ LINEのAPIと経度・緯度から天気予報を取得するAPIを使用し、�
 <br />
 
 # Botの作成方法
-```
-OS: macOS Big Sur 11.6
+使用環境 <br>
+OS: macOS Big Sur 11.6 <br>
 チップ: Intel
 
-Version
-docker: 20.10.8
+Version <br>
+docker: 20.10.8 <br>
 Kubernetes: v1.21.2
-```
+
+<br />
 
 ## 1. コードをクローン
 ```
