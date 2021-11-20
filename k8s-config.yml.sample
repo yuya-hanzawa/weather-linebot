@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata: 
   name: weather-config
 data:
-  LAT: < Latitude　>
+  LAT: < Latitude >
   LON: < Longitude >
 ---
 apiVersion: v1
