@@ -48,7 +48,7 @@ $ kubectl create job manually --from=cronjob/weather-bot
 
 </br>
 
-# Reference
+# References
 
 ## Weather API
 
