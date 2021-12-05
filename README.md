@@ -1,25 +1,27 @@
 # weather-linebot
+
+## Description
 Create a bot that periodically notifies you of weather forecasts using the LINE API and an API that obtains weather forecasts from longitude and latitude.
 
 </br>
 
-# Usage
-## 1. Clone Codes
+## Usage
+### 1. Clone Codes
 ```
 $ git clone https://github.com/zawa1120/weather-linebot.git
 ```
 
-## 2. Create a Configuration File
+### 2. Create a Configuration File
 Create a Configuration file based on k8s-config.yml.samle.
 
-## 3. Deploy Containers
+### 3. Deploy Containers
 ```
 $ bash build.sh
 ```
 
 </br>
 
-# Requirements
+## Requirements
 - macOS Big Sur 11.6 Intel
 
 </br>
@@ -29,35 +31,35 @@ $ bash build.sh
 
 </br>
 
-# Optional commands
+## Optional commands
 
-## Disable CronJob
+### Disable CronJob
 ```
 $ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": true } }'
 ```
 
-## Restart CronJob
+### Restart CronJob
 ```
 $ kubectl patch cronjob weather-bot -p '{ "spec": { "suspend": false } }'
 ```
 
-## Run CronJob Manually
+### Run CronJob Manually
 ```
 $ kubectl create job manually --from=cronjob/weather-bot
 ```
 
 </br>
 
-# References
+## References
 
-## Weather API
+### Weather API
 
-### API
+#### API
 https://api.rakuten.net/weatherbit/api/weather?endpoint=apiendpoint_5067b308-eb68-4d2d-b0ae-e135dbd646d8
 
-### Documents
+#### Documents
 https://www.weatherbit.io/api/weather-forecast-120-hour
 
-## Line API
-### Documents
+### Line API
+#### Documents
 https://developers.line.biz/ja/reference/messaging-api/#send-push-message
