@@ -24,10 +24,9 @@ $ bash build.sh
 ## Requirements
 - macOS Big Sur 11.6 Intel
 
-</br>
-
-- docker 20.10.8  
-- Kubernetes v1.21.2
+- Tools
+  - docker 20.10.8  
+  - Kubernetes v1.21.2
 
 </br>
 
