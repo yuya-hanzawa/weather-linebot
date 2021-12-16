@@ -17,7 +17,6 @@ def Create_messages(lat, lon, sign_up_token):
 
     params = {"lat":lat, "lon":lon, "lang":"ja", "hours":"15"}
 
-
     headers = {
         'x-rapidapi-key': sign_up_token,
         'x-rapidapi-host': "weatherbit-v1-mashape.p.rapidapi.com"
@@ -33,7 +32,7 @@ def Create_messages(lat, lon, sign_up_token):
     message = ''
     
     for data in response.json()["data"]:
-        if int(data["timestamp_local"][11:13])%3==0:
+        if int(data["timestamp_local"][11:13])%3 == 0:
 
             message += data["timestamp_local"][11:16] + "時の降水確率は" + str(data["pop"]) + "%です"
 
