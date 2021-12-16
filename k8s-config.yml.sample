@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata: 
   name: weather-config
 data:
-  LAT: < Latitude >
-  LON: < Longitude >
+  LAT: <Latitude>
+  LON: <Longitude>
 ---
 apiVersion: v1
 kind: Secret
@@ -12,7 +12,7 @@ metadata:
   name: weather-secret
 type: Opaque
 data:
-  # echo -n < secret token > | base64　でトークンをbase64にエンコード
-  SIGN_UP_TOKEN: < sign_up_token >
-  CHANNEL_ACCESS_TOKEN: < channel_access_token >
-  REPLY_TOKEN: < reply-token >
+  # echo -n <secret_token> | base64　でトークンをbase64にエンコード
+  SIGN_UP_TOKEN: <sign_up_token>
+  CHANNEL_ACCESS_TOKEN: <channel_access_token>
+  REPLY_TOKEN: <reply-token>
