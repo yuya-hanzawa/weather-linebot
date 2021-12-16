@@ -1,7 +1,7 @@
 # weather-linebot
 
 ## Description
-Create a bot that periodically notifies you of weather forecasts using the LINE API and an API that obtains weather forecasts from longitude and latitude.
+Created a bot that periodically imforms me of weather forecasts using the LINE API and an API that obtains weather forecasts from longitude and latitude.
 
 </br>
 
